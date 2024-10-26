@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    background-image: url("../pics/brainImage.avif");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    height: 100vh; 
+  }
+  
+  nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%; 
+    padding: 15px;
+    text-align: center;
+    position: relative; 
+  }
+  
+  .nav-buttons {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+  a{
+    color: white;
+    text-decoration: none;
+  }
+  .nav-btn {
+    background-color: rgb(1, 124, 124);
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 0.9em;
+  }
+  
+  .quizContainer {
+    margin: 20px ; 
+    border: 0.2rem solid rgb(66, 66, 66);
+    background-color: rgb(71, 152, 189,0.8);
+    border-radius: 0.8rem;
+    padding: 10px 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    min-width: 600px;
+    height: 400px;
+    
+  }
+
+/* Styles for the options container */
+#optionsContainer {
+  display: flex;
+  flex-direction: column; /* Arrange options vertically */
+  gap: 20px; /* Add some space between options */
+}
+
+/* Option button styles */
+
+.nav-btn{
+  margin-top: 17px;
+  float: right;
+}
+#scoreHeader{
+  text-align: center;
+  margin-top: 27%;
+}
