@@ -56,7 +56,7 @@ h1 {
   margin-bottom: 20px;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: calc(100vh - 70px); /* Adjust height to account for navbar */
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
@@ -112,11 +112,6 @@ input {
   color: #007bff;
   cursor: pointer;
 }
-
-/* Container Styling */
-.container {
-}
-
 /* Quiz Header */
 #quiz-container h2 {
   text-align: center;
