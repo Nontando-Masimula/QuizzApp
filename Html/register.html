@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Quiz App</title>
+    <link rel="stylesheet" href="../style/loginsStyle.css">
+  
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <h1>Test your knowledge with our fun and interactive quiz!</h1>
+    
+    </nav>
+
+    <!-- Registration Form -->
+    <div class="container">
+        <div class="modal-content" id="register-form">
+            <h2>Register</h2>
+            <form id="registerForm"> 
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="new-password">Password:</label>
+                <input type="password" id="password" required>
+                <label for="new-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required>
+                <button type="submit" class="button" onclick="storeUserDetails()">Register</button>
+            </form>
+            <p>Already have an account? <a href="login.html" class="link">Login here</a></p>
+        </div>
+    </div>
+</body>
+
+<script src="../js/scripts.js" ></script>/script>
+</html>

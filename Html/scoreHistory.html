@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Score History</title>
+    <link rel="stylesheet" href="../style/homeStyle.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Brain Teaser Quiz!</h1>
+        <div class="nav-buttons">
+            <a href="quiz.html" class="nav-btn">Take Quiz</a>
+            <a href="login.html" class="nav-btn" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <h1 id="user-name"></h1> 
+    <p id="error-message" style="color: red;"></p> <!-- Placeholder for error message -->
+
+    <div id="attempt-history">
+        <h2>Your Quiz Attempt History</h2>
+        <!-- User attempts will be displayed here by JavaScript -->
+    </div>
+
+</body>
+<script type="module" src="../js/scoreHistory.js"></script>
+</html>
