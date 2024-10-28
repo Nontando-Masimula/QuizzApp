@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('./pics/brainImage.avif'); /* Add your background image path here */
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    color: white; /* Change text color to white for better contrast */
+}
+
+nav {
+    background-color: black; /* Semi-transparent background for better readability */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.nav-buttons {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.nav-btn {
+    background-color: darkcyan;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+ 
+
+.primary-btn {
+    background-color: rgba(40, 167, 69, 0.8); /* Semi-transparent button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.modal-content {
+    background-color: lightblue; /* Semi-transparent white for forms */
+    padding: 30px;
+    border-radius: 25px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    margin-left: 90PX;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.link {
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Container Styling */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+   
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Quiz Header */
+#quiz-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+}
+
+/* Question Styling */
+.question-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.question-container p {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Option Styling */
+.question-container label {
+    display: block;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: darkcyan;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.question-container input[type="radio"] {
+    margin-right: 8px;
+}
+
+.question-container label:hover {
+    background-color: #d1d1e6;
+}
+
+/* Button Styling */
+.primary-btn, #submit-btn, #next-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #5a67d8;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.primary-btn:hover, #submit-btn:hover, #next-btn:hover {
+    background-color: #4c51bf;
+}
+
+/* Score Display */
+#score-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#score-container h3 {
+    font-size: 24px;
+    color: white;
+}
+
+#score-container .button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ed8936;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#score-container .button:hover {
+    background-color: #dd6b20;
+}
+P{
+    color: black;
+}
