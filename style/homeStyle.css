@@ -97,9 +97,23 @@ a {
 }
 
 
+
+
 #attempt-history p span {
   font-weight: bold;
 }
+
+#retryButton {
+  display: block;
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin-left: 38%;
+
+ }
 
 
 h2 {

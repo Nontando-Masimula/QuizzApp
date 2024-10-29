@@ -1,4 +1,6 @@
-import { score, quizData, loadQuestion, currentQuestion, checkAnswer, displayScore,shuffleQuestions } from './quiz.js';
+import { score, quizData, loadQuestion, currentQuestionIndex, checkAnswer, displayScore,shuffleQuestions } from './quiz.js';
+import { saveQuizAttempt } from './scoreHistory.js';
+
 
 const quizContainer = document.getElementById("quiz-container");
 const optionsContainer = document.getElementById("optionsContainer");
@@ -11,7 +13,7 @@ const questionCountDisplay = document.getElementById("currentQuestionCount");
 shuffleQuestions(quizData);
 
 function displayQuestion() {
-  const currentData = loadQuestion(currentQuestion);
+  const currentData = loadQuestion(currentQuestionIndex);
   quizQuestion.innerText = currentData.question;
 
   optionsContainer.innerHTML = "";
@@ -25,25 +27,14 @@ function displayQuestion() {
     optionsContainer.appendChild(optionLabel);
   });
 
-  questionCountDisplay.innerText = `Question ${currentQuestion + 1} of ${quizData.length}`;
+  questionCountDisplay.innerText = `Question ${currentQuestionIndex + 1} of ${quizData.length}`;
 }
 
 displayQuestion();
 
 const fullName = localStorage.getItem("name");
+const userEmail = localStorage.getItem("email");
 
-function saveQuizAttempt(score) {
-  const attemptDate = new Date().toLocaleDateString();
-  const attempts = JSON.parse(localStorage.getItem("quizAttempts")) || [];
-
-  attempts.push({
-    name: fullName,
-    date: attemptDate,
-    score: score
-  });
-
-  localStorage.setItem("quizAttempts", JSON.stringify(attempts));
-}
 
 submitButton.addEventListener("click", () => {
   const selectedOption = document.querySelector('input[name="option"]:checked');
@@ -55,7 +46,7 @@ submitButton.addEventListener("click", () => {
 
   checkAnswer(selectedOption.value.toString());
 
-  if (currentQuestion < quizData.length) {
+  if (currentQuestionIndex < quizData.length) {
     displayQuestion();
   } else {
     const finalScore = displayScore();
@@ -70,8 +61,10 @@ submitButton.addEventListener("click", () => {
       <button id="retryButton">Take Quiz Again</button>
     `;
   
-    document.getElementById("retryButton").addEventListener("click", () => {
-      location.href="quiz.html";
-    });
+    document.getElementById("retryButton").addEventListener("click", function() {
+      
+          location.href = 'quiz.html'; // Redirect to quiz page if allowed
+     
+  });
   }
 });

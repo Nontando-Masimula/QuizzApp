@@ -1,6 +1,5 @@
-
 let score = 0;
-let currentQuestion = 0;
+let currentQuestionIndex = 0;
 
 const quizData = [
     {
@@ -48,7 +47,7 @@ function loadQuestion(currentQuestionIndex) {
 }
 
 function checkAnswer(selectedOptionIndex) {
-    const currentData = quizData[currentQuestion];
+    const currentData = quizData[currentQuestionIndex];
 
 
     if (selectedOptionIndex === undefined || selectedOptionIndex === null) {
@@ -61,9 +60,9 @@ function checkAnswer(selectedOptionIndex) {
         score++;
     }
 
-    currentQuestion++;
+    currentQuestionIndex++;
 
-    if (currentQuestion >= quizData.length) {
+    if (currentQuestionIndex >= quizData.length) {
         return {
             score: score,
             finished: true 
@@ -86,4 +85,4 @@ function shuffleQuestions(array) {
     }
   }
 
-export { score, quizData, loadQuestion, currentQuestion, checkAnswer, displayScore,shuffleQuestions};
+export { score, quizData, loadQuestion, currentQuestionIndex, checkAnswer, displayScore,shuffleQuestions};

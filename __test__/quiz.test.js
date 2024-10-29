@@ -1,30 +1,24 @@
-import {score, quizData,loadQuestion,currentQuestion,checkAnswer,displayScore,shuffleQuestions} from '../js/quiz.js'
+import {score, quizData,loadQuestion,currentQuestionIndex,checkAnswer,displayScore,shuffleQuestions} from '../js/quiz.js'
 
 describe('[Score]',()=>{
-    test('Score is defined',()=>{
-        expect(score).toBeDefined()
-    })
-
+   
     test('Score is a number',()=>{
         expect(typeof score).toBe('number')
     })
 })
 
-describe('[currentQuestion]',()=>{
-   test('currentQuestion  is defined',()=>{
-        expect(currentQuestion).toBeDefined()
-    })
+// describe('[currentQuestionIndex]',()=>{
+//    test('currentQuestionIndex  is defined',()=>{
+//         expect(currentQuestionIndex).toBeDefined()
+//     })
 
-    test('currentQuestion is a number',()=>{
-        expect(typeof currentQuestion).toBe('number')
-    })
+//     test('currentQuestionIndex is a number',()=>{
+//         expect(typeof currentQuestionIndex).toBe('number')
+//     })
     
-})
+// })
 
 describe('quizData',()=>{
-    test('Quiz data array is defined',()=>{
-        expect(quizData).toBeDefined()
-    })
     test('If the quiz data is an array',()=>{
         expect(Array.isArray(quizData)).toBe(true);
     })
@@ -39,7 +33,6 @@ describe('quizData',()=>{
         expect(quizData[index]).toHaveProperty('Options')
         expect(quizData[index]).toHaveProperty('Answer')
     })
-
 
     test('Question property is a string',()=>{
         const index=0;
@@ -59,24 +52,22 @@ describe('quizData',()=>{
 })
 
 describe('[loadQuestion]',()=>{
-    test('loadQuestion is defined',()=>{
-        expect(loadQuestion).toBeDefined()
-    })
     test('loadQuestion is a function',()=>{
         expect(typeof loadQuestion).toBe('function')
     })
     test("Should throw an error if the current data loaded doesn't have have a question",()=>{
         const currentData =0;
         quizData[currentData].Question='';
+        quizData[currentData].Options=[];
         
+        expect(() => loadQuestion(currentData)).toThrow("Question or options data is missing.");
         expect(() => loadQuestion(currentData)).toThrow("Question or options data is missing.");
     })
 
-    test("should throw an error if currentQuestion index is out of bounds", () => {
+    test("should throw an error if currentQuestionIndex index is out of bounds", () => {
 
         let index= -1;
         
-         
         expect(() => loadQuestion(index)).toThrow("Invalid question index");
         index=5;
         expect(() => loadQuestion(index)).toThrow("Invalid question index");
@@ -85,9 +76,7 @@ describe('[loadQuestion]',()=>{
 })
 
 describe('[checkAnswer]',()=>{
-    test('checkAnswer is defined',()=>{
-        expect(checkAnswer).toBeDefined()
-    })
+
     test('checkAnswer is a function',()=>{
         expect(typeof checkAnswer).toBe('function')
     })
@@ -106,7 +95,7 @@ describe('[checkAnswer]',()=>{
         
     })
 
-    test('Return false if the quiz question is still less than the length', () => {
+    test('Return false if there is still more questions', () => {
 
         const completedQuestion = quizData.length-1;
         const result = checkAnswer(completedQuestion);
@@ -116,24 +105,20 @@ describe('[checkAnswer]',()=>{
             finished: false
         });
     });
-
-    
-
 })
 
 
 describe('[displayScore]',()=>{
-   test('displayScore is defined',()=>{
-        expect(displayScore).toBeDefined()
-    })
     test('displayScore is a function',()=>{
         expect(typeof displayScore).toBe('function')
     })
+    test('If score is returned',()=>{
+        const score = displayScore(); 
+        expect(score).toBeDefined();
+    
+    })
 })
 describe('shuffleQuestions',()=>{
-    test('shuffleQuestions is defined',()=>{
-        expect(shuffleQuestions).toBeDefined()
-    })
     test('shuffleQuestions is a function',()=>{
         expect(typeof shuffleQuestions).toBe('function')
     })

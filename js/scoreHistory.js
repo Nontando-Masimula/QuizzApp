@@ -1,15 +1,18 @@
+
+const fullName = localStorage.getItem("name");
+const userEmail = localStorage.getItem("email");
+const attempts = JSON.parse(localStorage.getItem("quizAttempts")) || [];
+const userAttempts = attempts.filter(attempt => attempt.email === userEmail);
+
 function saveQuizAttempt(score) {
-  const fullName = localStorage.getItem("name");
   const attemptDate = new Date().toLocaleDateString();
+  
 
-  if (!fullName) return;
-
-
-  const attempts = JSON.parse(localStorage.getItem("quizAttempts")) || [];
 
 
   attempts.push({
     name: fullName,
+    email: userEmail,
     date: attemptDate,
     score: score
   });
@@ -19,8 +22,7 @@ function saveQuizAttempt(score) {
 
 
 function displayAttemptHistory() {
-  const fullName = localStorage.getItem("name");
-  const attempts = JSON.parse(localStorage.getItem("quizAttempts")) || [];
+  
 
   const historyContainer = document.getElementById("attempt-history");
   const userNameElement = document.getElementById("user-name");
@@ -33,25 +35,27 @@ function displayAttemptHistory() {
   historyContainer.innerHTML = "";
 
 
-  if (attempts.length === 0 || attempts.filter(attempt => attempt.name === fullName).length === 0) {
+  if (attempts.length === 0 || attempts.filter(attempt => attempt.email === userEmail).length === 0) {
     errorMessageElement.textContent = "No quiz attempts found for this user.";
     return;
   } else {
     errorMessageElement.textContent = ""; 
   }
-
-
-  const userAttempts = attempts.filter(attempt => attempt.name === fullName);
-  userAttempts.forEach(attempt => {
-    const attemptItem = document.createElement("p");
-    attemptItem.textContent = `Date: ${attempt.date} - Score: ${attempt.score}`;
-    historyContainer.appendChild(attemptItem);
-  });
-}
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (localStorage.getItem("name")) {
-    displayAttemptHistory();
+    historyContainer.innerHTML = ""; // Clear any previous content
+  
+    userAttempts.forEach(attempt => {
+      const attemptItem = document.createElement("p");
+      attemptItem.textContent = `Date: ${attempt.date} - Score: ${attempt.score}`;
+      historyContainer.appendChild(attemptItem);
+    });
   }
-});
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    if ( localStorage.getItem("name")) {
+      displayAttemptHistory(); // Show history if user is logged in
+    }
+  });
+
+  export{saveQuizAttempt}
+  

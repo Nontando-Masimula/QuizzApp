@@ -90,6 +90,7 @@ function loginUser(event) {
     if (user) {
 
         localStorage.setItem("name", user.name);
+        localStorage.setItem("email", user.email);
         localStorage.setItem("isLoggedIn", "true");
         location.href = 'index.html'; 
     }

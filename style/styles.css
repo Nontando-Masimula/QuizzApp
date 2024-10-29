@@ -2,15 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('./pics/brainImage.avif'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    color: white; 
+    background-image: url('./pics/brainImage.avif'); /* Add your background image path here */
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    color: white; /* Change text color to white for better contrast */
 }
 
 nav {
-    background-color: black; 
+    background-color: black; /* Semi-transparent background for better readability */
     color: white;
     padding: 15px;
     text-align: center;
@@ -40,7 +40,7 @@ h1 {
  
 
 .primary-btn {
-    background-color: rgba(40, 167, 69, 0.8); 
+    background-color: rgba(40, 167, 69, 0.8); /* Semi-transparent button */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -50,7 +50,7 @@ h1 {
 }
 
 .modal-content {
-    background-color: lightblue; 
+    background-color: lightblue; /* Semi-transparent white for forms */
     padding: 30px;
     border-radius: 25px;
     width: 300px;
@@ -89,7 +89,7 @@ input {
     cursor: pointer;
 }
 
-
+/* Container Styling */
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -99,14 +99,14 @@ input {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Quiz Header */
 #quiz-container h2 {
     text-align: center;
     font-size: 24px;
     color: white;
 }
 
-
+/* Question Styling */
 .question-container {
     margin-top: 20px;
     padding: 15px;
@@ -119,7 +119,7 @@ input {
     color: white;
 }
 
-
+/* Option Styling */
 .question-container label {
     display: block;
     padding: 8px;
@@ -138,7 +138,7 @@ input {
     background-color: #d1d1e6;
 }
 
-
+/* Button Styling */
 .primary-btn, #submit-btn, #next-btn {
     width: 100%;
     padding: 12px;
@@ -156,7 +156,7 @@ input {
     background-color: #4c51bf;
 }
 
-
+/* Score Display */
 #score-container {
     text-align: center;
     margin-top: 20px;
